@@ -75,8 +75,8 @@ const SlideAboutPartner = () => {
 
     const [state, setState] = useState(0)
 
-    useEffect(async () => {
-        return await querySelect()
+    useEffect( () => {
+        querySelect()
 /*        if (document.querySelectorAll('[data-slide="slide"]').length === 2) {
             Array.from(document.querySelectorAll('[data-slide="slide"]')).map((element) => {
                 console.log('3')
@@ -84,7 +84,6 @@ const SlideAboutPartner = () => {
             });
 
             return true; */
-    )
        // await setState((state) => state + 1);
     }, []);
 /*
@@ -98,25 +97,55 @@ const SlideAboutPartner = () => {
             console.log(element);
         });
 */
-      return partnerlock;
+      
 
 
-      const querySelect = async() => {
-
-
+      const querySelect = () => {
           if (document.querySelectorAll('[data-slide="slide"]').length === 2) {
               Array.from(document.querySelectorAll('[data-slide="slide"]')).map((element) => {
-                  console.log('3')
-                  console.log(element);
-              });
+                    console.log('in array')
+                    console.log(element)
 
-              return true;
-          }
-          return false;
-      }
+//                    console.log(document.getElementsByTagName(element));//.addEventListener('click', alert('hello8'))
+                   // element.onclick = showHide;
+                    //element.setAttribute("onclick", () => showHide());
+                        element.addEventListener('click', showHide.bind(this, element))
+                    /*() => {
+                        const target = element.getAttribute('data-target');
+                        console .log('the target')
+                        console.log(target);
+                        const targetElement = element.getElementsByClassName
+                        if (document.querySelector('.slide-panel-parent').children().is('.open')) {
+                            Array.from(document.querySelectorAll('.open')).map((elementChild) => {
+                                if (elementChild.hasAttribute('class', 'open')) {
+                                    
+                                }
+                    
+
+                            }); 
+
+                        }
+                                }); */
+                  element.preventDefault                  
+                  return true;
+                }); 
+            }
+      
+        }
+
+      const showHide = (element, temp) => {
+        console.log('the element');
+        console.log(element);
+        const target = element.getAttribute('data-target');
+        console.log('the target')
+        console.log(target);
+        const targetElement = document.getElementById(target);
+        if (document.querySelector('.slide-panel-parent').children().is('.open')) {
+            
+        }
+
+        
+     }  
+    return partnerlock;
 }
 export default SlideAboutPartner;
-
-
-
-
