@@ -7,6 +7,7 @@ import NavMobile from "./components/NavMobile";
 import Feature from './components/Feature'
 import About from './components/About'
 import SlideAboutPartner from "./components/SlideAboutPartner";
+import OurStory from "./components/OurStory";
 //import {useState} from "react";
 //console.log('hello')
 
@@ -22,6 +23,8 @@ function App() {
             <Feature/>
             <div className="divider divider-even" aria-hidden="true"></div>
             <About />
+            <OurStory/>
+
         </div>
         <div className="slide-panel-parent">
             <SlideAboutPartner/>

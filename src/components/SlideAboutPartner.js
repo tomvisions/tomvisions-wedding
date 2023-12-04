@@ -1,48 +1,7 @@
 import {partners} from "../data/partner"
-import {useState} from "react";
 import {useEffect} from "react";
 
 const SlideAboutPartner = () => {
- //   const [isLoading, setLoading] = useState(true); //
-//    const [isLoading] = useState(true)
-    // ______ data-slide function
-
-/*
-    => {
-        console.log('wootdd')
-        var $this = $(this);
-        var target = $this.attr('data-target');
-        var $target = $(target);
-        if ($('.slide-panel-parent').children().is('.open')) {
-            console.log('it is')
-            $('.open').not(target).removeClass('open');
-            $('.active-slide-btn').not(this).removeClass('active-slide-btn');
-            $(this).toggleClass('active-slide-btn');
-            $(target).toggleClass('open');
-            $('html').removeClass('slide-active');
-        } else {
-            $(target).toggleClass('open');
-            $(this).toggleClass('active-slide-btn');
-        }
-        if ($('.slide-panel-parent').children().is('.open')) {
-            $('html').addClass('slide-active');
-        } else {
-            $('html').removeClass('slide-active');
-        }
-        console.log('ending')
-        e.preventDefault();
-    }); */
-/*
-    $('.slide-panel .close').click(function(e) {
-        $('.active-slide-btn').removeClass('active-slide-btn');
-        $(this).parent().removeClass('open');
-        $('html').removeClass('slide-active');
-        $('.page-container').removeAttr('style');
-        e.preventDefault();
-    }); */
-
-
-
       const partnerlock = partners.map((partner) => {
           const theId = `about-partner-${partner.id}`;
           return (
@@ -72,80 +31,48 @@ const SlideAboutPartner = () => {
             </div>
           )
         })
-
-    const [state, setState] = useState(0)
-
     useEffect( () => {
         querySelect()
-/*        if (document.querySelectorAll('[data-slide="slide"]').length === 2) {
-            Array.from(document.querySelectorAll('[data-slide="slide"]')).map((element) => {
-                console.log('3')
-                console.log(element);
-            });
-
-            return true; */
-       // await setState((state) => state + 1);
     }, []);
-/*
-    console.log('1')
-        console.log(document.querySelectorAll('a[data-slide="slide"]'));
-    console.log('2')
-
-      console.log( Array.from(document.querySelectorAll('[data-slide="slide"]')))
-        Array.from(document.querySelectorAll('[data-slide="slide"]')).map((element) => {
-            console.log('3')
-            console.log(element);
-        });
-*/
-      
-
 
       const querySelect = () => {
           if (document.querySelectorAll('[data-slide="slide"]').length === 2) {
               Array.from(document.querySelectorAll('[data-slide="slide"]')).map((element) => {
-                    console.log('in array')
-                    console.log(element)
 
-//                    console.log(document.getElementsByTagName(element));//.addEventListener('click', alert('hello8'))
-                   // element.onclick = showHide;
-                    //element.setAttribute("onclick", () => showHide());
-                        element.addEventListener('click', showHide.bind(this, element))
-                    /*() => {
-                        const target = element.getAttribute('data-target');
-                        console .log('the target')
-                        console.log(target);
-                        const targetElement = element.getElementsByClassName
-                        if (document.querySelector('.slide-panel-parent').children().is('.open')) {
-                            Array.from(document.querySelectorAll('.open')).map((elementChild) => {
-                                if (elementChild.hasAttribute('class', 'open')) {
-                                    
-                                }
-                    
+                  element.addEventListener('click', show.bind(this, element))
 
-                            }); 
-
-                        }
-                                }); */
-                  element.preventDefault                  
-                  return true;
-                }); 
+                });
             }
-      
+
+          if (document.querySelectorAll('.slide-panel .close').length === 2) {
+              Array.from(document.querySelectorAll('.slide-panel .close')).map((element) => {
+
+                  element.addEventListener('click', hide.bind(this, element))
+              });
+          }
+
         }
 
-      const showHide = (element, temp) => {
-        console.log('the element');
-        console.log(element);
+      const show = (element, event) => {
         const target = element.getAttribute('data-target');
-        console.log('the target')
-        console.log(target);
         const targetElement = document.getElementById(target);
-        if (document.querySelector('.slide-panel-parent').children().is('.open')) {
-            
-        }
 
-        
-     }  
+        targetElement.classList.add('open');
+        element.classList.add('active-slide-btn');
+
+        document.querySelector('html').classList.add('slide-active');
+        event.preventDefault();
+
+     }
+
+    const hide = (element, event) => {
+
+        element.parentElement.classList.remove('open');
+        document.querySelector('.active-slide-btn').classList.remove('active-slide-btn');
+        document.querySelector('html').classList.remove('slide-active');
+        event.preventDefault();
+
+    }
     return partnerlock;
 }
 export default SlideAboutPartner;

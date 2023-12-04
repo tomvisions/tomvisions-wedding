@@ -19,9 +19,6 @@ const Header = () => {
                             <li className="active"><a href="#begin">Begin</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#our-story">Our Story</a></li>
-                            <li><a href="#ceremony">Ceremony</a></li>
-                            <li><a href="#reception">Reception</a></li>
-                            <li><a href="#stay">Where To Stay</a></li>
                             <li><a href="#gallery">Gallery</a></li>
                         </ul>
                     </nav>

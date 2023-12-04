@@ -7,7 +7,7 @@ const About = () => {
                     <div className="col-xs-6 col-md-4 col-md-offset-1">
                         <a href="#"
                            data-slide="slide"
-                           data-target="#about-partner-1"
+                           data-target="about-partner-1"
                            className="color-inherit-link"
                            role="button"
                            aria-controls="about-partner-1"
@@ -23,7 +23,7 @@ const About = () => {
                     <div className="col-xs-6 col-md-4 col-md-offset-2">
                         <a href="#"
                            data-slide="slide"
-                           data-target="#about-partner-2"
+                           data-target="about-partner-2"
                            className="color-inherit-link"
                            role="button"
                            aria-controls="about-partner-2"
