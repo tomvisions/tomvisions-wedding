@@ -7,7 +7,7 @@ const Feature = () => {
     const background = `url(${tomVanessa})`;
 
     return (
-        <div className="feature-section feature-odd make-page-height" id="begin">
+        <div className="feature-section feature-odd" id="begin">
             <div className="hero-banner" style={{"backgroundImage": background, "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
             <section className="row text-center the-couple-row">
                   <div className="col-sm-12 the-couple-text-wrapper">

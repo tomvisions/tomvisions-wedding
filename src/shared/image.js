@@ -34,7 +34,7 @@ export const loadImage400x513 = (image) =>  {
     const resizedImage = resizeWithInS3(image, {
       "resize": {
         "width": 1280,
-        "height":1039,
+        "height":610,
         "fit": "cover"
       }
     });
