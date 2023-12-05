@@ -7,11 +7,12 @@ switch(environment) {
         restAPIUrl="http://127.0.0.1:9000";
         break;
     case "stage":
-        restAPIUrl="https:/api-stage.tomvisions.com";
+        restAPIUrl="https://api-stage.tomvisions.com";
         break;
     case "prod":
-        restAPIUrl="https:/api.tomvisions.com";
-        break;          
+    default:
+        restAPIUrl="https://api.tomvisions.com";
+        break;
 
 }
 
