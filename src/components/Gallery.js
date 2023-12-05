@@ -8,18 +8,15 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 import {useEffect, useState, useCallback, useRef} from "react";
 import {loadImage1280x720, loadImage720x1280, loadImage100x100, setSitePrefix} from "../shared";
+import { restAPIUrl } from '../shared/environment';
 
 const Gallery = () => {
     const lightGallery = useRef(null);
     const [items, setItems] = useState([]);
-   // const [galleryImages, setGalleryImages] = useState([]);
-
-   // const lightGallery = useRef<any>(nQQull);
-    //let galleryImages = [];
-
-
+   
+    console.log(`${restAPIUrl}/api/v1/wedding`);
     useEffect(() => {
-        fetch('https://api-stage.tomvisions.com/api/v1/wedding')
+        fetch(`${restAPIUrl}/api/v1/wedding`)
             .then(results => results.json())
             .then(data => {
                 const items = [];
@@ -46,7 +43,7 @@ const Gallery = () => {
         return items.map((item, index) => {
             return (
                 <div
-                    style={{display: "inline-block", border:"10px solid white"}}
+                    style={{display: "inline-block", border:"10px solid #eee"}}
                     key={item.id}
                     className="gallery-item"
                     data-src={item.big}
@@ -63,7 +60,7 @@ const Gallery = () => {
 
     return (
         <>
-            <section className="feature-section feature-odd" id="gallery">
+            <section className="feature-section feature-even" id="gallery">
 
                 <div className="container">
                 <div className="col-lg-12 col-md-4 col-sm-12">
