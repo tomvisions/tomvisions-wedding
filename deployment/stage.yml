@@ -12,9 +12,8 @@ phases:
       #     - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 955552760689.dkr.ecr.us-east-1.amazonaws.com
       #      - npm install babel-plugin-transform-runtime --save
       #      - npm install babel-preset-env --save
-      - npm install
-      - npm install -g cross-env
-      - next build
+      - yarn install
+      - yarn build
   build:
     commands:
 #      - echo "In the building process"
