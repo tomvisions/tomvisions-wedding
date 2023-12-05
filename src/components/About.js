@@ -1,4 +1,10 @@
+import {loadImage400x513} from '../shared'
+
 const About = () => {
+  const vanessaHead = loadImage400x513('vanessa-head-sm.png');
+  const tomHead = loadImage400x513('tom-head-sm.png');
+  
+
     return (
         <section className="feature-section make-page-height feature-even" id="about">
             <div className="container vertical-align-middle">
@@ -13,9 +19,9 @@ const About = () => {
                            aria-controls="about-partner-1"
                            aria-expanded="false">
                             <div className="img-treatment">
-                                <img src="assets/couple-images/individual-1-fpo.jpg" alt="Name of Person" />
+                                <img src={vanessaHead} alt="Vanessa Malik" />
                             </div>
-                            <h3 className="h1">Katherine</h3>
+                            <h3 className="h1">The lovely Vanessa</h3>
                             <p className="text-uppercase the-couple-statement">About Her + </p>
                         </a>
                     </div>
@@ -30,9 +36,9 @@ const About = () => {
                            aria-expanded="false"
                         >
                             <div className="img-treatment">
-                                <img src="assets/couple-images/individual-2-fpo.jpg" alt="Name of Person" />
+                                <img src={tomHead} alt="Tom Cruickshank" />
                             </div>
-                            <h3 className="h1">Christopher</h3>
+                            <h3 className="h1">The dashing Tom</h3>
                             <p className="text-uppercase the-couple-statement">About Him + </p>
                         </a>
                     </div>

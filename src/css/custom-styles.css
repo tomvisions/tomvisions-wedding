@@ -1,1 +1,10 @@
 /* Your Custom Styles go below */
+.header{
+    background:#800080;
+}
+
+.header-top .the-couple-row {
+    display: table;
+    width: 100%;
+    height: 100%;
+}

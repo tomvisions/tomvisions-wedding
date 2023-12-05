@@ -1,22 +1,21 @@
+import { loadImage1280x610 } from "../shared/image";
+
 const Feature = () => {
+    
+    const tomVanessa = loadImage1280x610('van-tom.jpg');
+
+    const background = `url(${tomVanessa})`;
+
     return (
         <div className="feature-section feature-odd make-page-height" id="begin">
-            <div className="container the-couple-content">
-                <section className="row text-center the-couple-row">
-                    <div className="col-lg-6">
-                        <div className="the-couple-image-holder">
-                            <span className="the-couple-mask" aria-hidden="true">
-                            </span>
-                            <img className="the-couple-image" src="assets/couple-images/the-couple-fpo.jpg" alt="Couple Name" />
-                        </div>
-                    </div>
-                    <div className="col-lg-6 the-couple-text-wrapper">
-                        <h1 className="the-couple-name">Katherine & Christopher</h1>
-                        <p className="text-uppercase the-couple-statement">Are getting married</p>
-                        <h2 className="the-couple-date h3">November 14, 2016</h2>
-                    </div>
-                </section>
-            </div>
+            <div className="hero-banner" style={{"backgroundImage": background, "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
+            <section className="row text-center the-couple-row">
+                  <div className="col-sm-12 the-couple-text-wrapper">
+                      <h1 className="the-couple-name">Vanessa & Tom</h1>
+                      <p className="text-uppercase the-couple-statement">Got married: July 7, 2018</p>
+                   </div>
+              </section>  
+                </div>            
         </div>
     );
 }

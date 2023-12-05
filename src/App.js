@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './css/bootstrap.min.css';
 import './css/swirly-love-theme.min.css';
-import './css/custom-styles.css';
+import './css/wedding.css';
+//import './css/custom-styles.css';
 import Header from './components/Header';
 import NavMobile from "./components/NavMobile";
 import Feature from './components/Feature'
@@ -22,7 +23,6 @@ function App() {
 
         <div className="page-container clearfix" id="content" role="main">
             <Feature/>
-            <div className="divider divider-even" aria-hidden="true"></div>
             <About />
             <OurStory/>
             <Gallery/>

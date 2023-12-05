@@ -1,3 +1,5 @@
+import { loadImage400x267 } from "../shared/image";
+
 const StoryItem = (props, key) => {
 
     const classNames = {classNamePicture: null, classNameContent: null}
@@ -9,6 +11,8 @@ const StoryItem = (props, key) => {
         classNames.classNamePicture = 'col-sm-6  col-sm-push-6';
         classNames.classNameContent = 'col-sm-6  col-sm-pull-6';
     }
+
+    const pictureHead = loadImage400x267(props.props.story.picture);
     return (
         <>
         <div className="love-block-icon">
@@ -17,7 +21,7 @@ const StoryItem = (props, key) => {
         </div>
         <div className="row love-block love-block-1 love-block-odd">
             <div className={classNames.classNamePicture}>
-                <img src="assets/couple-images/love-block-image-1.jpg" alt="add a description to get better accessibility" className="img-circle img-responsive center-block"/>
+                <img src={pictureHead} alt="add a description to get better accessibility" className="img-circle img-responsive center-block"/>
             </div>
             <div className={classNames.classNameContent}>
                 <h3 className="h2">{props.props.story.title}</h3>

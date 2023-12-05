@@ -15,7 +15,9 @@ const Header = () => {
                                     <span className="lines"></span>
                                 </span>
                         </a>
-                        <ul className="nav">
+                        <ul 
+                        className="nav">
+                            <li><a href="https://www.tomvisions.com">Home</a></li>
                             <li className="active"><a href="#begin">Begin</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#our-story">Our Story</a></li>

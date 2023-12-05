@@ -1,9 +1,20 @@
 import {partners} from "../data/partner"
 import {useEffect} from "react";
+import {loadImage400x513} from '../shared'
+
+const NewlineText = (props) => {
+    const text = props.text;
+    const newText = text.split('\n').map((str, index) => <p key={index} >{str}</p>);
+  
+  return newText;
+}   
 
 const SlideAboutPartner = () => {
+  
       const partnerlock = partners.map((partner) => {
           const theId = `about-partner-${partner.id}`;
+          const pictureHead = loadImage400x513(partner.picture);
+
           return (
             <div key={partner.id} className="slide-panel" id={theId}>
                 <a href="#" className="close ti ti-close"></a>
@@ -12,13 +23,13 @@ const SlideAboutPartner = () => {
                     <div className="row break-480px">
                         <div className="col-xs-6">
                             <div className="img-treatment">
-                                <img src="assets/couple-images/individual-1-fpo.jpg" alt="Name of Person"/>
+                                <img src={pictureHead} alt={partner.bio}  />
                             </div>
                         </div>
                         <div className="col-xs-6">
-                            <p>
-                                {partner.bio}
-                            </p>
+                            
+                        <NewlineText text={partner.bio}/>
+                            
                             <blockquote>
                                 <p>
                                     {partner.quote}

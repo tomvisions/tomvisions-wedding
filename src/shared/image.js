@@ -16,7 +16,32 @@ export const loadImage400x513 = (image) =>  {
     return `${PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-    export const loadImage100x100 = (image) => {
+  export const loadImage400x267 = (image) => {
+    const resizedImage = resizeWithInS3(image, {
+      "resize": {
+        "width": 400,
+        "height":267,
+        "fit": "cover"
+      }
+    });
+
+    return `${PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
+
+
+
+  export const loadImage1280x610 = (image) => {
+    const resizedImage = resizeWithInS3(image, {
+      "resize": {
+        "width": 1280,
+        "height":610,
+        "fit": "cover"
+      }
+    });
+    return `${PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
+
+   export const loadImage100x100 = (image) => {
       const resizedImage = resizeWithInS3(image, {
         "resize": {
           "width": 100,
@@ -27,12 +52,12 @@ export const loadImage400x513 = (image) =>  {
       return `${PARAM_FRONTCLOUD}/${resizedImage}`;
     }
 
-    export const loadImage1200x729 = (image) => {
+    export const loadImage1280x720 = (image) => {
       const resizedImage = resizeWithInS3(image, {
         "resize": {
           "width": 1200,
           "height":720,
-          "fit": "cover"
+          "fit": "outside"
         }
       });
       return `${PARAM_FRONTCLOUD}/${resizedImage}`;
@@ -43,7 +68,7 @@ export const loadImage400x513 = (image) =>  {
           "resize": {
             "width": 720,
             "height":1280,
-            "fit": "inside"
+            "fit": "outside"
           }
         });
         return `${PARAM_FRONTCLOUD}/${resizedImage}`;

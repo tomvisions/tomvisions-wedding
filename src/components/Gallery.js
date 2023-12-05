@@ -7,14 +7,14 @@ import 'lightgallery/css/lg-thumbnail.css';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 import {useEffect, useState, useCallback, useRef} from "react";
-import {loadImage1200x729, loadImage720x1280, loadImage100x100, setSitePrefix} from "../shared";
+import {loadImage1280x720, loadImage720x1280, loadImage100x100, setSitePrefix} from "../shared";
 
 const Gallery = () => {
     const lightGallery = useRef(null);
     const [items, setItems] = useState([]);
    // const [galleryImages, setGalleryImages] = useState([]);
 
-   // const lightGallery = useRef<any>(null);
+   // const lightGallery = useRef<any>(nQQull);
     //let galleryImages = [];
 
 
@@ -25,27 +25,14 @@ const Gallery = () => {
                 const items = [];
                 data.map((entry, index) => {
                     setSitePrefix(false );
-                    items.push( {id: index, big: loadImage1200x729(entry['key']), small: loadImage100x100(entry['key'])});
+
+                    if (entry.orientation === 1) {
+                        items.push( {id: index, big: loadImage720x1280(entry['key']), small: loadImage100x100(entry['key'])});
+                    } else {
+                        items.push( {id: index, big: loadImage1280x720(entry['key']), small: loadImage100x100(entry['key'])});
+                    }
                     setItems(items);
-
-                 //   console.log(entry);
-                  //  console.log( {big: loadImage1200x729(entry['key']), small: loadImage100x100(entry['key'])});
-//                    setGalleryImages([
-  //                      ...galleryImages, {big: loadImage1200x729(entry['key']), small: loadImage100x100(entry['key'])}
-    //                ]);
-
-                //        console.log('test')
-                 //   console.log(galleryImages);
                 });
-              //  console.log(data);
-              //  console.log(data[0].id);
-
-            //    if (data.orientation === 1) {
-              //      galleryImages.push({big: loadImage720x1280(data['key']), small: loadImage100x100(data['key'])});
-              //  } else {
-
-        //        setGalleryImages(...galleryImages, {big: loadImage1200x729(data['key']), small: loadImage100x100(data['key'])});
-              // }
             });
     }, []);
 
@@ -56,7 +43,7 @@ const Gallery = () => {
     }, []);
 
     const getItems = useCallback(() => {
-        return items.map((item) => {
+        return items.map((item, index) => {
             return (
                 <div
                     style={{display: "inline-block", border:"10px solid white"}}
@@ -74,40 +61,12 @@ const Gallery = () => {
         lightGallery.current.refresh();
     }, [items])
 
-//    console.log(galleryImages);
-
-   // const [items, setItems] = useState(galleryImages);
-  //  console.log(items);
-
-//    useEffect(() => {
-  //      lightGallery.current.refresh();
-  ///  }, [items]);
-
-/*
-    const getItems = useCallback(() => {
-        console.log('hee')
-        console.log(items);
-        return items.map((item) => {
-            return (
-                <div
-                    key={item.id}
-                    data-lg-size={item.size}
-                    className="gallery-item"
-                    data-src={item.src}
-                >
-                    <img className="img-responsive" src={item.thumb} />
-                </div>
-            );
-        });
-    }, [galleryImages]);
-
-*/
     return (
         <>
             <section className="feature-section feature-odd" id="gallery">
 
                 <div className="container">
-                <div class="col-lg-12 col-md-4 col-sm-12">
+                <div className="col-lg-12 col-md-4 col-sm-12">
                     <h2 className="theme-title">Photo Gallery</h2>
                     <LightGallery
                         onInit={onInit}
