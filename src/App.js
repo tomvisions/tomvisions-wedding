@@ -8,6 +8,7 @@ import Feature from './components/Feature'
 import About from './components/About'
 import SlideAboutPartner from "./components/SlideAboutPartner";
 import OurStory from "./components/OurStory";
+import Gallery from "./components/Gallery";
 //import {useState} from "react";
 //console.log('hello')
 
@@ -24,7 +25,7 @@ function App() {
             <div className="divider divider-even" aria-hidden="true"></div>
             <About />
             <OurStory/>
-
+            <Gallery/>
         </div>
         <div className="slide-panel-parent">
             <SlideAboutPartner/>
