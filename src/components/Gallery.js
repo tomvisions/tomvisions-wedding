@@ -49,9 +49,9 @@ const Gallery = () => {
                     key={item.id}
                     className="gallery-item"
                     data-src={item.big}
-                    alt="Gallery Image"
+                    alt="The bigger version"
                 >
-                    <img className="img-responsive" src={item.small} alt="Small Image" />
+                    <img className="img-responsive" src={item.small} alt="The Smaller version" />
                 </div>
             );
         });
