@@ -51,7 +51,7 @@ const Gallery = () => {
                     data-src={item.big}
                     alt="Gallery Image"
                 >
-                    <img className="img-responsive" src={item.small} />
+                    <img className="img-responsive" src={item.small} alt="Small Image" />
                 </div>
             );
         });

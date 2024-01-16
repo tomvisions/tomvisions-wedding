@@ -38,7 +38,7 @@ const SlideAboutPartner = () => {
                         </div>
                     </div>
                 </div>
-                <a href="#" className="go-to-top scroll-panel-top"><span className="ti ti-arrow-up"></span></a>
+                <div className="go-to-top scroll-panel-top"><span className="ti ti-arrow-up"></span></div>
             </div>
           )
         })
