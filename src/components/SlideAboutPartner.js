@@ -43,31 +43,31 @@ const SlideAboutPartner = () => {
           )
         })
     useEffect( () => {
-        querySelect()
-
-        return () => {}
-    }, []);
-
-      const querySelect = () => {
-          if (document.querySelectorAll('[data-slide="slide"]').length === 2) {
-              Array.from(document.querySelectorAll('[data-slide="slide"]')).map((element) => {
-
-                  element.addEventListener('click', show.bind(this, element))
-                  
-                  return element;  
+        const querySelect = () => {
+            if (document.querySelectorAll('[data-slide="slide"]').length === 2) {
+                Array.from(document.querySelectorAll('[data-slide="slide"]')).map((element) => {
+  
+                    element.addEventListener('click', show.bind(this, element))
+                    
+                    return element;  
+                  });
+              }
+  
+            if (document.querySelectorAll('.slide-panel .close').length === 2) {
+                Array.from(document.querySelectorAll('.slide-panel .close')).map((element) => {
+  
+                    element.addEventListener('click', hide.bind(this, element))
+  
+                    return element;
                 });
             }
-
-          if (document.querySelectorAll('.slide-panel .close').length === 2) {
-              Array.from(document.querySelectorAll('.slide-panel .close')).map((element) => {
-
-                  element.addEventListener('click', hide.bind(this, element))
-
-                  return element;
-              });
+  
           }
 
-        }
+        querySelect()
+    }, []);
+
+     
 
       const show = (element, event) => {
         const target = element.getAttribute('data-target');
