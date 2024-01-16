@@ -11,7 +11,7 @@ const About = () => {
                 <h2 className="theme-title">About the Couple</h2>
                 <div className="row break-480px text-center">
                     <div className="col-xs-6 col-md-4 col-md-offset-1">
-                        <a href="#"
+                        <div
                            data-slide="slide"
                            data-target="about-partner-1"
                            className="color-inherit-link"
@@ -23,11 +23,11 @@ const About = () => {
                             </div>
                             <h3 className="h1">The lovely Vanessa</h3>
                             <p className="text-uppercase the-couple-statement">About Her + </p>
-                        </a>
+                        </div>
                     </div>
                     <span className="hidden-xs hidden-sm heart-divider" aria-hidden="true"></span>
                     <div className="col-xs-6 col-md-4 col-md-offset-2">
-                        <a href="#"
+                        <div
                            data-slide="slide"
                            data-target="about-partner-2"
                            className="color-inherit-link"
@@ -40,7 +40,7 @@ const About = () => {
                             </div>
                             <h3 className="h1">The dashing Tom</h3>
                             <p className="text-uppercase the-couple-statement">About Him + </p>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>

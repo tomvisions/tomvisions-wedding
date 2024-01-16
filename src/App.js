@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './css/bootstrap.min.css';
 import './css/swirly-love-theme.min.css';
 import './css/wedding.css';

@@ -17,7 +17,7 @@ const SlideAboutPartner = () => {
 
           return (
             <div key={partner.id} className="slide-panel" id={theId}>
-                <a href="#" className="close ti ti-close"></a>
+                <div className="close ti ti-close"></div>
                 <div className="container vertical-align-middle">
                     <h2 className="theme-title">{partner.title}</h2>
                     <div className="row break-480px">
@@ -38,31 +38,36 @@ const SlideAboutPartner = () => {
                         </div>
                     </div>
                 </div>
-                <a href="#" className="go-to-top scroll-panel-top"><span className="ti ti-arrow-up"></span></a>
+                <div className="go-to-top scroll-panel-top"><span className="ti ti-arrow-up"></span></div>
             </div>
           )
         })
     useEffect( () => {
+        const querySelect = () => {
+            if (document.querySelectorAll('[data-slide="slide"]').length === 2) {
+                Array.from(document.querySelectorAll('[data-slide="slide"]')).map((element) => {
+  
+                    element.addEventListener('click', show.bind(this, element))
+                    
+                    return element;  
+                  });
+              }
+  
+            if (document.querySelectorAll('.slide-panel .close').length === 2) {
+                Array.from(document.querySelectorAll('.slide-panel .close')).map((element) => {
+  
+                    element.addEventListener('click', hide.bind(this, element))
+  
+                    return element;
+                });
+            }
+  
+          }
+
         querySelect()
     }, []);
 
-      const querySelect = () => {
-          if (document.querySelectorAll('[data-slide="slide"]').length === 2) {
-              Array.from(document.querySelectorAll('[data-slide="slide"]')).map((element) => {
-
-                  element.addEventListener('click', show.bind(this, element))
-
-                });
-            }
-
-          if (document.querySelectorAll('.slide-panel .close').length === 2) {
-              Array.from(document.querySelectorAll('.slide-panel .close')).map((element) => {
-
-                  element.addEventListener('click', hide.bind(this, element))
-              });
-          }
-
-        }
+     
 
       const show = (element, event) => {
         const target = element.getAttribute('data-target');
