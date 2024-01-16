@@ -44,6 +44,8 @@ const SlideAboutPartner = () => {
         })
     useEffect( () => {
         querySelect()
+
+        return () => {}
     }, []);
 
       const querySelect = () => {
@@ -51,7 +53,8 @@ const SlideAboutPartner = () => {
               Array.from(document.querySelectorAll('[data-slide="slide"]')).map((element) => {
 
                   element.addEventListener('click', show.bind(this, element))
-
+                  
+                  return element;  
                 });
             }
 
@@ -59,6 +62,8 @@ const SlideAboutPartner = () => {
               Array.from(document.querySelectorAll('.slide-panel .close')).map((element) => {
 
                   element.addEventListener('click', hide.bind(this, element))
+
+                  return element;
               });
           }
 
