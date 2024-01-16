@@ -10,11 +10,11 @@ const Header = () => {
             <div className="header-inner">
                 <div className="header-vertical-center">
                     <nav id="nav" className="nav-wrapper">
-                        <a href="#" className="menu-toggle" aria-label="navigation menu" role="button" aria-controls="nav" aria-expanded="false">
+                        <div className="menu-toggle" aria-label="navigation menu" role="button" aria-controls="nav" aria-expanded="false">
                                 <span className="veggieburger">
                                     <span className="lines"></span>
                                 </span>
-                        </a>
+                        </div>
                         <ul 
                         className="nav">
                             <li><a href="https://www.tomvisions.com">Home</a></li>

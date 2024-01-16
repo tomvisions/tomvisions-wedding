@@ -29,6 +29,8 @@ const Gallery = () => {
                         items.push( {id: index, big: loadImage1280x720(entry['key']), small: loadImage100x100(entry['key'])});
                     }
                     setItems(items);
+
+                    return;
                 });
             });
     }, []);
@@ -47,6 +49,7 @@ const Gallery = () => {
                     key={item.id}
                     className="gallery-item"
                     data-src={item.big}
+                    alt="Gallery Image"
                 >
                     <img className="img-responsive" src={item.small} />
                 </div>
