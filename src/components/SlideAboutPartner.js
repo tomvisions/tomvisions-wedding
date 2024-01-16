@@ -17,7 +17,7 @@ const SlideAboutPartner = () => {
 
           return (
             <div key={partner.id} className="slide-panel" id={theId}>
-                <a href="#" className="close ti ti-close"></a>
+                <div className="close ti ti-close"></div>
                 <div className="container vertical-align-middle">
                     <h2 className="theme-title">{partner.title}</h2>
                     <div className="row break-480px">

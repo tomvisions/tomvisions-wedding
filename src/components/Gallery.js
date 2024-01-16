@@ -30,7 +30,7 @@ const Gallery = () => {
                     }
                     setItems(items);
 
-                    return;
+                    return items;
                 });
             });
     }, []);
