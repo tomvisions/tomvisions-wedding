@@ -14,9 +14,9 @@ const Gallery = () => {
     const lightGallery = useRef(null);
     const [items, setItems] = useState([]);
    
-    console.log(`${restAPIUrl}/api/v1/wedding`);
+    console.log(`${restAPIUrl}/wedding`);
     useEffect(() => {
-        fetch(`${restAPIUrl}/api/v1/wedding`)
+        fetch(`${restAPIUrl}/wedding`)
             .then(results => results.json())
             .then(data => {
                 const items = [];
