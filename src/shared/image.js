@@ -1,7 +1,7 @@
 //declare var require;
 const Buffer = require('buffer').Buffer;
 
-const PARAM_FRONTCLOUD = 'https://d34wc8uzk8vrsx.cloudfront.net';
+const PARAM_FRONTCLOUD = 'https://images.tomvisions.com';
 let PARAM_LOCATION = 'wedding';
 
 export const loadImage400x513 = (image) =>  {
@@ -87,7 +87,7 @@ export const loadImage400x513 = (image) =>  {
     }
 
     const imageRequest = JSON.stringify({
-      bucket: "tomvisions-original-images",
+      bucket: "images.tomvisions.com",
       key: key,
       edits: edits
     })
