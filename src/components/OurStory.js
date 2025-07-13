@@ -7,6 +7,7 @@ const OurStory = () => {
             <div className="container">
                 <h2 className="theme-title">Our Story</h2>
                 {ourStoryTimeLine.map((story, index) => {
+
                     return <StoryItem props={{story:story,index:index}} key={index} />
                 })}
             </div>

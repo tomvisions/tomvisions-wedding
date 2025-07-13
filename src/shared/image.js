@@ -52,6 +52,17 @@ export const loadImage400x513 = (image) =>  {
       return `${PARAM_FRONTCLOUD}/${resizedImage}`;
     }
 
+export const loadImage300x300 = (image) => {
+  const resizedImage = resizeWithInS3(image, {
+    "resize": {
+      "width": 250,
+      "height":250,
+      "fit": "outside"
+    }
+  });
+  return `${PARAM_FRONTCLOUD}/${resizedImage}`;
+}
+
     export const loadImage1280x720 = (image) => {
       const resizedImage = resizeWithInS3(image, {
         "resize": {

@@ -9,14 +9,27 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import {useEffect, useState, useCallback, useRef} from "react";
 import {loadImage1280x720, loadImage720x1280, loadImage100x100, setSitePrefix} from "../shared";
 import { restAPIUrl } from '../shared/environment';
+import $ from 'jquery';
+
+let currentCount = 0;
 
 const Gallery = () => {
     const lightGallery = useRef(null);
     const [items, setItems] = useState([]);
-   
+
+    const $window = $(window);
+
+    $window.scroll(function () {
+        if ($window.scrollTop() >= $(document).height() - $window.height() - 10) {
+            // User scrolled till the bottom the page
+            $('#infinite-scroll-gallery').append(images);
+            infiniteScrollingGallery.refresh();
+        }
+    });
+
     console.log(`${restAPIUrl}/wedding`);
     useEffect(() => {
-        fetch(`${restAPIUrl}/wedding`)
+        fetch(`${restAPIUrl}/wedding/id/photo-booth/image/${this.currentCount == 0 ? 1: this.currentCount}/12/key/asc`)
             .then(results => results.json())
             .then(data => {
                 const items = [];
